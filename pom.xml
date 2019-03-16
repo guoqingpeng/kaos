@@ -123,9 +123,6 @@
 	 
   </dependencies>
   <modules>
-    
-    <module>kaos-sso</module>
-    <module>kaos-webproject-template</module>
-    
+       
   </modules>
 </project>
