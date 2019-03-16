@@ -14,6 +14,34 @@
 						 http://www.springframework.org/schema/util 
 						 http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 						 
-						 
-
+	<!-- 第一步扫描web包控制器 -->
+	<!-- 3.0版本以上要手动开启注解 -->
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.jiede.template.controller"></context:component-scan>
+	
+	<!-- 第二步配置视图解析将modelview以及字符串解析为具体的页面 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:viewClass="org.springframework.web.servlet.view.JstlView"
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+		
+    <!-- 返回消息编码处理 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+				<bean class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
 </beans>
