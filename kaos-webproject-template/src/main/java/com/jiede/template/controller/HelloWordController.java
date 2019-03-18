@@ -11,7 +11,7 @@ public class HelloWordController {
 	@RequestMapping("hh")
 	public String hello() {
 		
-		return "hello kaku";
+		return "中文hello kaku where are you we are looking for you";
 		
 	}
 	
