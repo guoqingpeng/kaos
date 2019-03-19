@@ -23,7 +23,7 @@
       <scope>test</scope>
     </dependency>
      
-    <!-- here just configall  springframework  nomatter is webapp of just a clientapp total 22 items-->
+    <!-- here just confi gall  springframework  no matter is webapp of just a clientapp total 17 items-->
     
 	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -122,10 +122,11 @@
 	</dependency>
 	 
   </dependencies>
+  
   <modules>
     <module>kaos-sso</module>
     <module>kaos-webproject-template</module>
     <module>kaos-newgk</module>
-
   </modules>
+  
 </project>
