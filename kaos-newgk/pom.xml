@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.jiede</groupId>
-  <artifactId>kaos-webproject-template</artifactId>
+  <artifactId>kaos-newgk</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>kaos-webproject-template Maven Webapp</name>
@@ -22,7 +22,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>kbt</finalName>
+    <finalName>gk</finalName>
 	<plugins>
 	  <plugin>
 	    <groupId>org.eclipse.jetty</groupId>
