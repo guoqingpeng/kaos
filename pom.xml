@@ -124,9 +124,7 @@
   </dependencies>
   
   <modules>
-    <module>kaos-sso</module>
     <module>kaos-webproject-template</module>
-    <module>kaos-newgk</module>
   </modules>
   
 </project>

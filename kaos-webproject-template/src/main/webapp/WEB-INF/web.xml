@@ -60,8 +60,19 @@
 		<filter-name>springUtf8Encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- 使用spring自带的拦截器设置字符为utf8 end-->
-
+	
+	<!-- Spring session --> 
+	<filter> 
+		<filter-name>springSessionRepositoryFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> 
+	</filter> 
+	<filter-mapping>
+		 <filter-name>springSessionRepositoryFilter</filter-name> 
+		 <url-pattern>/*</url-pattern> 
+		 <dispatcher>REQUEST</dispatcher>
+	 	 <dispatcher>ERROR</dispatcher> 
+	</filter-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
