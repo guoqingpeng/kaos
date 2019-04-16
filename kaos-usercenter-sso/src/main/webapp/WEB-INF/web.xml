@@ -76,7 +76,7 @@
 		<!-- Spring session 存储--> 
 	<filter> 
 		<filter-name>testss</filter-name> 
-		<filter-class>com.jiede.template.filter.LoginCheckSessionFilter</filter-class> 
+		<filter-class>com.jiede.sso.filter.LoginCheckSessionFilter</filter-class> 
 	</filter> 
 	<filter-mapping>
 		 <filter-name>testss</filter-name> 
@@ -87,7 +87,7 @@
 	
 	
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
 	
 </web-app>

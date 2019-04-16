@@ -125,6 +125,8 @@
   
   <modules>
     <module>kaos-webproject-template</module>
+    <module>kaos-app1</module>
+    <module>kaos-usercenter-sso</module>
   </modules>
   
 </project>

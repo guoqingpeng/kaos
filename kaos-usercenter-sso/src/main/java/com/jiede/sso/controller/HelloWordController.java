@@ -1,4 +1,6 @@
-package com.jiede.template.controller;
+package com.jiede.sso.controller;
+
+import java.io.IOException;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -10,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.jiede.template.cookieUtil.CookieUitls;
-import com.jiede.template.sesstion.SesstionStore;
+import com.jiede.sso.cookieUtil.CookieUitls;
+import com.jiede.sso.sesstion.SesstionStore;
 
 @Controller
 public class HelloWordController {
@@ -26,10 +28,35 @@ public class HelloWordController {
 		
 	}
 	
+	@RequestMapping("demo")
+	public ModelAndView demo(HttpSession  session) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("demo");
+		
+		return mv;
+		
+	}
 	
+	@RequestMapping("toLogin")
+	public ModelAndView toLogin(HttpServletRequest request) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		String redirectUrl = request.getParameter("redirectUrl");
+		
+		mv.addObject("redirectUrl",redirectUrl);
+		
+		mv.setViewName("login");
+		
+		return mv;
+		
+	}
 	
 	@RequestMapping("login")
-	public ModelAndView login(HttpServletRequest request,HttpServletResponse response) {
+	@ResponseBody
+	public void login(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -41,7 +68,8 @@ public class HelloWordController {
 		//
 		CookieUitls.addCookie(response, new Cookie(CookieUitls.findSesstionKey(request), request.getSession().getId()));
 		
-		return mv;
+		response.sendRedirect("http://kwt.kaku.com:8081?demo.do");		
+		//return mv;
 		
 	}
 
