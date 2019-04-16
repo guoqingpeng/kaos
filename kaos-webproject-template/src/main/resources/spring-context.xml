@@ -15,4 +15,5 @@
        
        <!-- spring session 作分分布式布式session共享 -->
       <import resource="classpath:spring-session.xml"/>
+      
 </beans>
