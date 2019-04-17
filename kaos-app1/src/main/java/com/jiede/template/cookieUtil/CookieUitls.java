@@ -1,4 +1,4 @@
-package com.jiede.sso.cookieUtil;
+package com.jiede.template.cookieUtil;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -71,9 +71,11 @@ public class CookieUitls {
 				
 				if (cookie.getName().equals(newCookie.getName())) {
 					
-					cookie.setMaxAge(0);
+					cookie.setDomain(".kaku.com");
 					
-					response.addCookie(cookie);
+					cookie.setPath("/");
+					
+					return;
 					
 				}
 				

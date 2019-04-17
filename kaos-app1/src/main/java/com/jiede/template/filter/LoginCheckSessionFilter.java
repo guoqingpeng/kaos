@@ -46,7 +46,7 @@ public class LoginCheckSessionFilter implements  Filter{
 			
 			String jumpToUrl  = "http://sso.kaku.com:8080/toLogin.do";
 			
-			String redirectUrl = "http://kwt.kaku.com:8081/hh.do";
+			String redirectUrl = "http://app1.kaku.com:8082/hh.do";
 			
 			String destinationUrl = jumpToUrl.concat("?").concat("redirectUrl=").concat(redirectUrl);
 			
