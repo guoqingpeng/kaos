@@ -71,9 +71,9 @@ public class CookieUitls {
 				
 				if (cookie.getName().equals(newCookie.getName())) {
 					
-					cookie.setDomain(".kaku.com");
+					cookie.setDomain("kaku.com");
 					
-					cookie.setPath("/");
+					cookie.setPath("");
 					
 					return;
 					

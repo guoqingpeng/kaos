@@ -45,7 +45,13 @@ public class HelloWordController {
 		ModelAndView mv = new ModelAndView();
 		
 		String redirectUrl = request.getParameter("redirectUrl");
+		
 		mv.addObject("redirectUrl",redirectUrl);
+		
+		String seesionId = ((HttpServletRequest)request).getSession().getId();
+
+		CookieUitls.addCookie(request, response, new Cookie(CookieUitls.findSesstionKey(((HttpServletRequest)request)),seesionId));
+		
 		mv.setViewName("login");
 		
 		return mv;
@@ -53,8 +59,7 @@ public class HelloWordController {
 	}
 	
 	@RequestMapping("login")
-	@ResponseBody
-	public void login(HttpServletRequest request,HttpServletResponse response) throws IOException {
+	public ModelAndView login(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -62,11 +67,13 @@ public class HelloWordController {
 		
 		String redirectUrl = request.getParameter("redirectUrl");
 		
+		String seesionId = ((HttpServletRequest)request).getSession().getId();
+		
 		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
 		
-		response.sendRedirect(redirectUrl);
+		CookieUitls.addCookie(request, response, new Cookie(CookieUitls.findSesstionKey(((HttpServletRequest)request)),seesionId));
 		
-		//return mv;
+		return mv;
 		
 	}
 
