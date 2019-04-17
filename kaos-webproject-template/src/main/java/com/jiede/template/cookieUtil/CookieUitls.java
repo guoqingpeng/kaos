@@ -71,11 +71,9 @@ public class CookieUitls {
 				
 				if (cookie.getName().equals(newCookie.getName())) {
 					
-					cookie.setDomain(".kaku.com");
+					cookie.setMaxAge(0);
 					
-					cookie.setPath("/");
-					
-					return;
+					response.addCookie(cookie);
 					
 				}
 				
@@ -88,5 +86,6 @@ public class CookieUitls {
 		response.addCookie(newCookie);
 		
 	}
+
 
 }
