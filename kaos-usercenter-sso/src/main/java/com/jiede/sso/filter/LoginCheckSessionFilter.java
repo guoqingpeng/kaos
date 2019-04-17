@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -37,6 +38,7 @@ public class LoginCheckSessionFilter implements  Filter{
 		String unionApplicationToken = SesstionStore.getUnionApplicationToken((HttpServletRequest)request);
 		
 		if (unionApplicationToken == null || "".equals(unionApplicationToken)) {
+			
 			System.out.println("do nothing");
 			
 			

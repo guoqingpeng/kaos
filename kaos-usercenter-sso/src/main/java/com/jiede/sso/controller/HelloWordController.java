@@ -40,14 +40,12 @@ public class HelloWordController {
 	}
 	
 	@RequestMapping("toLogin")
-	public ModelAndView toLogin(HttpServletRequest request) {
+	public ModelAndView toLogin(HttpServletResponse response,HttpServletRequest request) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		String redirectUrl = request.getParameter("redirectUrl");
-		
 		mv.addObject("redirectUrl",redirectUrl);
-		
 		mv.setViewName("login");
 		
 		return mv;
@@ -65,9 +63,6 @@ public class HelloWordController {
 		String redirectUrl = request.getParameter("redirectUrl");
 		
 		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
-		
-		//
-		CookieUitls.addCookie(response, new Cookie(CookieUitls.findSesstionKey(request), request.getSession().getId()));
 		
 		response.sendRedirect(redirectUrl);
 		

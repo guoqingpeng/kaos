@@ -1,4 +1,4 @@
-package com.jiede.sso.cookieUtil;
+package com.jiede.template.cookieUtil;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
