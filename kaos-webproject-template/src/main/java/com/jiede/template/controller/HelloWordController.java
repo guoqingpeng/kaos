@@ -16,13 +16,10 @@ import com.jiede.template.sesstion.SesstionStore;
 @Controller
 public class HelloWordController {
 	
-	@ResponseBody
 	@RequestMapping("hh")
 	public String hello(HttpSession  session) {
 		
-		session.setAttribute("userId", "dddssd");
-		
-		return "中文hello kaku where are you we are looking for you";
+		return "login-success";
 		
 	}
 	
@@ -31,17 +28,7 @@ public class HelloWordController {
 	@RequestMapping("login")
 	public ModelAndView login(HttpServletRequest request,HttpServletResponse response) {
 		
-		ModelAndView mv = new ModelAndView();
-		
-		mv.setViewName("login-success");
-		
-		
-		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
-		
-		//
-		CookieUitls.addCookie(response, new Cookie(CookieUitls.findSesstionKey(request), request.getSession().getId()));
-		
-		return mv;
+		return null;
 		
 	}
 

@@ -62,13 +62,15 @@ public class HelloWordController {
 		
 		mv.setViewName("login-success");
 		
+		String redirectUrl = request.getParameter("redirectUrl");
 		
 		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
 		
 		//
 		CookieUitls.addCookie(response, new Cookie(CookieUitls.findSesstionKey(request), request.getSession().getId()));
 		
-		response.sendRedirect("http://kwt.kaku.com:8081?demo.do");		
+		response.sendRedirect(redirectUrl);
+		
 		//return mv;
 		
 	}
