@@ -75,11 +75,11 @@
 	
 		<!-- Spring session 存储--> 
 	<filter> 
-		<filter-name>testss</filter-name> 
+		<filter-name>LoginCheckSessionFilter</filter-name> 
 		<filter-class>com.jiede.template.filter.LoginCheckSessionFilter</filter-class> 
 	</filter> 
 	<filter-mapping>
-		 <filter-name>testss</filter-name> 
+		 <filter-name>LoginCheckSessionFilter</filter-name> 
 		 <url-pattern>*.do</url-pattern> 
 		 <dispatcher>REQUEST</dispatcher>
 	 	 <dispatcher>ERROR</dispatcher> 

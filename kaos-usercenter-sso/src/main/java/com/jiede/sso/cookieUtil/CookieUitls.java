@@ -13,7 +13,7 @@ public class CookieUitls {
 	 */
 	public static String findSesstionKey(HttpServletRequest request) {
 		
-		String sesstionKey = "";
+		String sesstionKey = "SESSION";
 		
 		Cookie[] cookies = request.getCookies();
 		
@@ -26,7 +26,7 @@ public class CookieUitls {
 					
 					sesstionKey = keyName;
 					
-					return keyName;
+					return sesstionKey;
 					
 				}
 				
@@ -58,7 +58,7 @@ public class CookieUitls {
 	}
 	
 	/**
-	 * 
+	 * transform all single domain cookie to parent cookie
 	 * @param request
 	 * @param response
 	 * @param cookie
@@ -71,6 +71,7 @@ public class CookieUitls {
 				
 				if (cookie.getName().equals(newCookie.getName())) {
 					
+					//delete single domain cookie
 					cookie.setMaxAge(0);
 					
 					response.addCookie(cookie);
@@ -79,6 +80,8 @@ public class CookieUitls {
 				
 			}
 		}
+		
+		
 		newCookie.setDomain(".kaku.com");
 		
 		newCookie.setPath("/");

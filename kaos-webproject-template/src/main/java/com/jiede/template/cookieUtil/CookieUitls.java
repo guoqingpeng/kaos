@@ -13,7 +13,7 @@ public class CookieUitls {
 	 */
 	public static String findSesstionKey(HttpServletRequest request) {
 		
-		String sesstionKey = "";
+		String sesstionKey = "SESSION";
 		
 		Cookie[] cookies = request.getCookies();
 		
@@ -26,7 +26,7 @@ public class CookieUitls {
 					
 					sesstionKey = keyName;
 					
-					return keyName;
+					return sesstionKey;
 					
 				}
 				
@@ -81,7 +81,7 @@ public class CookieUitls {
 			}
 		}
 		
-		//transfor into parent domain cookie
+		
 		newCookie.setDomain(".kaku.com");
 		
 		newCookie.setPath("/");

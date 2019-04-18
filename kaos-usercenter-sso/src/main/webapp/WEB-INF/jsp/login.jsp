@@ -1,11 +1,6 @@
 
 <html>
 
-
-<script>
-   alert(document.cookie.length);
-</script>
-
 <body>
 sso common login page11
 ${ redirectUrl}

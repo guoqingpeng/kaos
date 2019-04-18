@@ -39,8 +39,7 @@ public class LoginCheckSessionFilter implements  Filter{
 		
 		if (unionApplicationToken == null || "".equals(unionApplicationToken)) {
 			
-			System.out.println("do nothing");
-			
+			((HttpServletRequest)request).getRequestDispatcher("/toLogin.do?redirectUrl=/demo.do").forward(request, response);
 			
 		}else {
 			
