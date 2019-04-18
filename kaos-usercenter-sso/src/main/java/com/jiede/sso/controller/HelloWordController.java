@@ -48,8 +48,6 @@ public class HelloWordController {
 		
 		mv.addObject("redirectUrl",redirectUrl);
 		
-		String seesionId = ((HttpServletRequest)request).getSession().getId();
-		
 		mv.setViewName("login");
 		
 		return mv;
@@ -69,7 +67,7 @@ public class HelloWordController {
 		
 		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
 		
-		CookieUitls.addCookie(request, response, new Cookie(CookieUitls.findSesstionKey(((HttpServletRequest)request)),seesionId));
+		//CookieUitls.addCookie(request, response, new Cookie(CookieUitls.findSesstionKey(((HttpServletRequest)request)),seesionId));
 		
 		response.sendRedirect(redirectUrl);
 		

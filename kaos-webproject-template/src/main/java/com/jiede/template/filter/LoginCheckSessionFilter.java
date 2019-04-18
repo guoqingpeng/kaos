@@ -8,9 +8,11 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jiede.template.cookieUtil.CookieUitls;
 import com.jiede.template.sesstion.SesstionStore;
 
 public class LoginCheckSessionFilter implements  Filter{
@@ -37,8 +39,15 @@ public class LoginCheckSessionFilter implements  Filter{
 		
 		String sessionId = ((HttpServletRequest)request).getSession().getId();
 		
+		System.out.println(sessionId);
+		
 		//unionApplicationToken
 		String unionApplicationToken = SesstionStore.getUnionApplicationToken((HttpServletRequest)request);
+		
+		//this is a very important operation make cookie to the same domain ,like .kaku.com
+		CookieUitls.addCookie( (HttpServletRequest)request
+				              , (HttpServletResponse)response
+			              	, new Cookie(CookieUitls.findSesstionKey((HttpServletRequest)request), sessionId));
 		
 		System.out.println(unionApplicationToken);
 		

@@ -58,7 +58,7 @@ public class CookieUitls {
 	}
 	
 	/**
-	 * 
+	 * transform all single domain cookie to parent cookie
 	 * @param request
 	 * @param response
 	 * @param cookie
@@ -71,6 +71,7 @@ public class CookieUitls {
 				
 				if (cookie.getName().equals(newCookie.getName())) {
 					
+					//delete single domain cookie
 					cookie.setMaxAge(0);
 					
 					response.addCookie(cookie);
@@ -79,6 +80,8 @@ public class CookieUitls {
 				
 			}
 		}
+		
+		//transfor into parent domain cookie
 		newCookie.setDomain(".kaku.com");
 		
 		newCookie.setPath("/");
