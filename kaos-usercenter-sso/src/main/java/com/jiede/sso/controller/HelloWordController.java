@@ -57,21 +57,13 @@ public class HelloWordController {
 	@RequestMapping("login")
 	public void login(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		
-		ModelAndView mv = new ModelAndView();
-		
-		mv.setViewName("login-success");
-		
 		String redirectUrl = request.getParameter("redirectUrl");
 		
 		String seesionId = ((HttpServletRequest)request).getSession().getId();
 		
 		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
 		
-		//CookieUitls.addCookie(request, response, new Cookie(CookieUitls.findSesstionKey(((HttpServletRequest)request)),seesionId));
-		
 		response.sendRedirect(redirectUrl);
-		
-		//return mv;
 		
 	}
 

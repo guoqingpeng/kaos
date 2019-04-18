@@ -39,19 +39,16 @@ public class LoginCheckSessionFilter implements  Filter{
 		
 		String sessionId = ((HttpServletRequest)request).getSession().getId();
 		
-		System.out.println(sessionId);
-		
+		CookieUitls.addCookie(((HttpServletRequest)request), 
+								((HttpServletResponse)response), 
+								new Cookie(CookieUitls.findSesstionKey(((HttpServletRequest)request)),sessionId));
+				
 		//unionApplicationToken
 		String unionApplicationToken = SesstionStore.getUnionApplicationToken((HttpServletRequest)request);
 		
-		//this is a very important operation make cookie to the same domain ,like .kaku.com
-		CookieUitls.addCookie( (HttpServletRequest)request
-				              , (HttpServletResponse)response
-			              	, new Cookie(CookieUitls.findSesstionKey((HttpServletRequest)request), sessionId));
-		
-		System.out.println(unionApplicationToken);
 		
 		if (unionApplicationToken == null || "".equals(unionApplicationToken)) {
+			
 			
 			String jumpToUrl  = "http://sso.kaku.com:8080/toLogin.do";
 			
