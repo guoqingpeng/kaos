@@ -2,7 +2,6 @@ package com.jiede.sso.controller;
 
 import java.io.IOException;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.jiede.sso.cookieUtil.CookieUitls;
 import com.jiede.sso.sesstion.SesstionStore;
 
 @Controller
@@ -61,7 +59,11 @@ public class HelloWordController {
 		
 		String seesionId = ((HttpServletRequest)request).getSession().getId();
 		
-		SesstionStore.setUnionApplicationTokenSession(request, "sssssssssssssggggggggggggggggg");
+		String userId = request.getParameter("userId");
+		
+		SesstionStore.setUnionApplicationTokenSession(request, seesionId+"-"+seesionId);
+		
+		redirectUrl = redirectUrl + "?unionApplicationToken="+seesionId+"-"+seesionId;
 		
 		response.sendRedirect(redirectUrl);
 		
