@@ -80,7 +80,7 @@
 	</filter> 
 	<filter-mapping>
 		 <filter-name>LoginCheckSessionFilter</filter-name> 
-		 <url-pattern>*.do</url-pattern> 
+		 <url-pattern>*.dod</url-pattern> 
 		 <dispatcher>REQUEST</dispatcher>
 	 	 <dispatcher>ERROR</dispatcher> 
 	</filter-mapping>
