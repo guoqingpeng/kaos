@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
-
+    <!-- 在spring中默认只需要将log4j.properties或者log4j.xml文件放在classpath下就可以 -->
 	<!-- 记录日志、信息、警告、错误 -->
 	<appender name="info" class="org.apache.log4j.DailyRollingFileAppender">
 		<param name="encoding" value="UTF-8"/>
