@@ -41,7 +41,9 @@ public class HelloWordController {
 		for (Map<String, Object> map : userList) {
 			
 			logger.info(map.get("name"));
+			
 			logger.warn(map.get("name"));
+			
 			logger.error(map.get("name"));
 			
 		}

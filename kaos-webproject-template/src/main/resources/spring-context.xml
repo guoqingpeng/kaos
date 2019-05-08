@@ -7,19 +7,22 @@
 				        http://www.springframework.org/schema/context
 				        http://www.springframework.org/schema/context/spring-context.xsd">
         
-      <!-- 开启注解模式 -->
-      <context:annotation-config></context:annotation-config>
+       <!-- 开启注解模式 -->
+      <context:annotation-config/>
       
-      <!-- 哪些包里面可以注解 -->
-      <context:component-scan base-package="com.jiede.template"></context:component-scan>
-       
-       <!-- spring session 作分分布式布式session共享 -->
+       <!-- 哪些包里面可以注解 -->
+      <context:component-scan base-package="com.jiede.template"/>
+      
+       <!--引入外部属性文件-->
+      <context:property-placeholder location="classpath:db.properties,classpath:redis.properties" /> 
+      
+      <!-- spring session 作分分布式布式session共享 -->
       <import resource="classpath:spring-session.xml"/>
       
       <!-- spring 使用jdbc方式操操作数据库 数据源druid -->
       <import resource="classpath:spring-jdbc.xml"/>
       
-       <!-- spring 使用mybatis方式操操作数据库 数据源druid -->
+      <!-- spring 使用mybatis方式操操作数据库 数据源druid -->
       <import resource="classpath:spring-mybatis.xml"/>
       
 </beans>

@@ -10,9 +10,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-   <!--引入外部属性文件-->
-    <context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
- 
     <!--配置阿里巴巴连接池，这个是最基本的连接数据库配置-->
     <bean id="dataSource" destroy-method="close" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${driver}"/>
