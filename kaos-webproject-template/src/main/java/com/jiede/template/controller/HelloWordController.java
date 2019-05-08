@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -19,14 +20,16 @@ import com.jiede.template.entity.User;
 @Controller
 public class HelloWordController {
 	
+	public  static Logger logger = Logger.getLogger(HelloWordController.class);
+	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
 	@Autowired 
 	UserDao userDao;
-	
-	@RequestMapping("hh")
+
 	@ResponseBody
+	@RequestMapping("hh")
 	public String  hello(HttpSession  session) throws IOException {
 		
 		String usersql = "select * from user";
@@ -37,7 +40,9 @@ public class HelloWordController {
 		
 		for (Map<String, Object> map : userList) {
 			
-			System.out.println(map.get("name"));
+			logger.info(map.get("name"));
+			logger.warn(map.get("name"));
+			logger.error(map.get("name"));
 			
 		}
 		
