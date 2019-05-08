@@ -59,8 +59,6 @@ public class HelloWordController {
 		
 		String seesionId = ((HttpServletRequest)request).getSession().getId();
 		
-		String userId = request.getParameter("userId");
-		
 		SesstionStore.setUnionApplicationTokenSession(request, seesionId+"-"+seesionId);
 		
 		redirectUrl = redirectUrl + "?unionApplicationToken="+seesionId+"-"+seesionId;
