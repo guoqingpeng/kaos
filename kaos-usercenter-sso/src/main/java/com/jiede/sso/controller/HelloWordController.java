@@ -22,6 +22,7 @@ public class HelloWordController {
 		
 		session.setAttribute("userId", "dddssd");
 		
+		
 		return "中文hello kaku where are you we are looking for you";
 		
 	}
