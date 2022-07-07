@@ -13,7 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springVserion>5.1.5.RELEASE</springVserion>
+    <springVserion>5.2.21.RELEASE</springVserion>
   </properties>
 
   <dependencies>
